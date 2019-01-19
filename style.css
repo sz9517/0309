@@ -6,7 +6,7 @@
   font-weight: 300;
 }
 body {
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei",Noto Sans TC,sans-serif;
   color: white;
   font-weight: 300;
 }
@@ -18,21 +18,21 @@ body ::-webkit-input-placeholder {
 }
 body :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei",Noto Sans TC,sans-serif;
   color: white;
   opacity: 1;
   font-weight: 300;
 }
 body ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei",Noto Sans TC,sans-serif;
   color: white;
   opacity: 1;
   font-weight: 300;
 }
 body :-ms-input-placeholder {
   /* Internet Explorer 10+ */
-  font-family:"Microsoft YaHei";
+  font-family:"Microsoft YaHei",Noto Sans TC,sans-serif;
   color: white;
   font-weight: 300;
 }
@@ -86,7 +86,7 @@ form input {
   margin: 0 auto 10px auto;
   display: block;
   text-align: center;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei",Noto Sans TC,sans-serif;
   font-size: 18px;
   color: white;
   -webkit-transition-duration: 0.25s;
@@ -107,7 +107,7 @@ form button {
           appearance: none;
   outline: 0;
   background-color: white;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft YaHei",Noto Sans TC,sans-serif;
   border: 0;
   padding: 10px 15px;
   color: #578bff;;
