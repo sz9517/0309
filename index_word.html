@@ -22,16 +22,37 @@
 <link rel="stylesheet" type="text/css" href="./demo5.css">
 </head>
 <style type="text/css">
-	.none{display: none}.word{color: #fff;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 0 auto;
+	.none{display: none}.word{color: #2b447d;
+    margin: 20px auto;
+    width: 18em;
     border-right: .05em solid;
     overflow: hidden;
+    font-weight: 900;
     white-space: nowrap;
-    animation: typing 3s steps(11),caret 1s steps(1) infinite;}@keyframes typing {from { width: 0 }}@keyframes caret {50% { border-color: transparent; }}
+    -webkit-animation: typing-data-v-f3a412f6 3s steps(18),insert-data-v-f3a412f6 1s steps(1) infinite;
+    animation: typing-data-v-f3a412f6 3s steps(18),insert-data-v-f3a412f6 1s steps(1) infinite;}@-webkit-keyframes insert-data-v-f3a412f6 {
+    50% {
+        border-color: transparent
+    }
+}
+
+@keyframes insert-data-v-f3a412f6 {
+    50% {
+        border-color: transparent
+    }
+}
+
+@-webkit-keyframes typing-data-v-f3a412f6 {
+    0% {
+        width: 0
+    }
+}
+
+@keyframes typing-data-v-f3a412f6 {
+    0% {
+        width: 0
+    }
+}
 </style>
 <body>
 <div class="overlay"></div>
