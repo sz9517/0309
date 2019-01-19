@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="./demo5.css">
 </head>
 <style type="text/css">
-	.none{display: none}.word{color: #2b447d;
+	.none{display: none}.word{color: #d8d8d8;
     margin: 20px auto;
     width: 18em;
     border-right: .05em solid;
@@ -53,9 +53,59 @@
         width: 0
     }
 }
+.shell {
+            width: 400px;
+            height: 300px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-size: 15px;
+            color: #828282;
+            font: monospace;
+        }
+
+        .header {
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-bottom: 2px solid #ccc;
+        }
+
+        img {
+            width: 80px;
+            height: auto;
+            vertical-align: top;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes caret {
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        h1 {
+            font: bold 200% Consolas, Monaco, monospace;
+            width: 20ch;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .05em solid;
+            animation: typing 2s steps(20),
+            caret 1s steps(1) infinite;
+        }
 </style>
 <body>
 <div class="overlay"></div>
+        <span>&gt;</span>
+        <span class="text"></span>
+        <i class="cursor" style="display: none; border-right:6px solid #30ad23;"></i>
+
+    <h1>test test test test.</h1>
 <div class="word">见面了要领他去看看我曾经去过的地方、生活过的地方，把自己曾经的记忆分享给他。
 
 一个人走了30年的路，虽然先前未曾和你相遇，但我把那些记忆都留起来，期望有一天分享给你，叫你看看你的那个人是怎么走来的，然后彼此可能就需要一起创造未来的记忆了。</div>
@@ -70,7 +120,73 @@
 			</div>
 		</main>
 	
+<script>
+        const $ = attr => document.querySelector(attr);
+        const textDom = $('.text');
+        const cursorDom = $('.cursor');
+        let timer;
+        let cursonTimer;
 
+        const input = (text) => {
+            const textArr = text.split('');
+            let index = 0;
+
+            const auto = () => {
+                cursorDom.style.display = 'inline';
+                clearInterval(cursonTimer);
+                const showText = textArr.slice(0, index).join('')
+                    .replace(/<\/br>/ig, '</br>> ')
+                    .replace(/<span\sclass\=\"js\">([^\/]*)<\/span>/ig, '\<span style="color: #415caa"\>$1\<\/span\>')
+                    .replace(/<span\sclass\=\"fun\">([^\/]*)<\/span>/ig, '\<span style="color: #de5d52"\>$1\<\/span\>');
+                textDom.innerHTML = showText;
+                timer = setTimeout(auto, 100);
+                if(/;$/.test(showText)) {
+                    clearTimeout(timer);
+                    timer = setTimeout(auto, 2000);
+                    cursonTimer = setInterval(() => {
+                        if (cursorDom.style.display === 'none') {
+                            cursorDom.style.display = 'inline';
+                        } else {
+                            cursorDom.style.display = 'none';
+                        }
+                    }, 500);
+                }
+                if (/\.{6}$/.test(showText)) {
+                    clearTimeout(timer);
+                    timer = setTimeout(auto, 2000);
+                    cursonTimer = setInterval(() => {
+                        if (cursorDom.style.display === 'none') {
+                            cursorDom.style.display = 'inline';
+                        } else {
+                            cursorDom.style.display = 'none';
+                        }
+                    }, 500);
+                    const remark = $('.remark');
+                    remark.style.color = '#ffda23';
+                }
+                var current = text.substr(index, 1);
+                if (current === '<') {
+                    index = text.indexOf('>', index) + 1;
+                }
+                else {
+                    index++;
+                }
+                if (index > textArr.length) {
+                    clearTimeout(timer);
+                    cursonTimer = setInterval(() => {
+                        if (cursorDom.style.display === 'none') {
+                            cursorDom.style.display = 'inline';
+                        } else {
+                            cursorDom.style.display = 'none';
+                        }
+                    }, 500);
+                };
+            }
+
+            timer = setTimeout(auto, 100);
+        }
+        input('<span class="js">const</span> <span style="color: #a3c6ec">object</span> = <span style="color: #efc014">{}</span>;</br><span class="js">object</span>.<span class="fun">name</span> = "balala";</br><span class="remark">//还是改变一下样式吧!背景色设成#000;</span></br><span class="remark">//还是不好看，字体颜色设成</span><span style="color: #30ad23">原谅绿#30ad23</span>;</br><span class="remark">//再改一下字体大小，改为10px;</span></br><span class="remark">//我还想加一个软妹子的皂片，不知道可不可以(( ื▿ ื) ......</span></br>');
+    </script>
 <script src="./vendors.js" type="text/javascript"></script>
 <script src="./demo5.js" type="text/javascript"></script>
 </body>
