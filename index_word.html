@@ -165,7 +165,7 @@
                 }
                 var current = text.substr(index, 1);
                 if (current === '<') {
-                    index = text.indexOf('', index) + 1;
+                    index = text.indexOf('>', index) + 1;
                 }
                 else {
                     index++;
