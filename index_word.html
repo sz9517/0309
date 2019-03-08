@@ -141,7 +141,7 @@ body {font-family: "PingFang TC","微軟正黑體",sans-serif;color: #d8d8d8;}
                 timer = setTimeout(auto, 500);
                 if(/;$/.test(showText)) {
                     clearTimeout(timer);
-                    timer = setTimeout(auto, 1000);
+                    timer = setTimeout(auto, 800);
                     cursonTimer = setInterval(() => {
                         if (cursorDom.style.display === 'none') {
                             cursorDom.style.display = 'inline';
@@ -152,7 +152,7 @@ body {font-family: "PingFang TC","微軟正黑體",sans-serif;color: #d8d8d8;}
                 }
                 if (/\.{6}$/.test(showText)) {
                     clearTimeout(timer);
-                    timer = setTimeout(auto, 1000);
+                    timer = setTimeout(auto, 800);
                     cursonTimer = setInterval(() => {
                         if (cursorDom.style.display === 'none') {
                             cursorDom.style.display = 'inline';
