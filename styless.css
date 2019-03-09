@@ -27,7 +27,7 @@ body {
   background: #ffffff;
   border-radius: 10px;
   position: relative;
-  top: 150px;
+  top: 100px;
   margin-left: 49.5%;
   width: 5px;
   height: 35px;
@@ -330,7 +330,7 @@ body {
 }
 .button-style1 {
 	position:absolute;
-	left:20%;
+	left:10%;
 	animation:btn1 15s;
 }
 .button-style2 {
