@@ -22,14 +22,52 @@
 <link rel="stylesheet" href="./choumei.min.css">
 </head>
 <style type="text/css">
-body {font-family: "PingFang TC","微軟正黑體",sans-serif;color: #d8d8d8;}
 .gray{width:100%;margin:0 auto;display: block;padding:10px;background-image: linear-gradient(to bottom, #ffffff 0%,#ffffff 85%,#fdb67a 100%);border-radius: 10px;-moz-box-shadow: 2px 2px 2px rgba(20%,20%,40%,0.6),4px 4px 6px rgba(20%,20%,40%,0.4),6px 6px 12px rgba(20%,20%,40%,0.4);-webkit-box-shadow: 2px 2px 2px rgba(20%,20%,40%,0.6), 4px 4px 6px rgba(20%,20%,40%,0.4), 6px 6px 12px rgba(20%,20%,40%,0.4);box-shadow: 2px 2px 2px rgba(20%,20%,40%,0.6), 4px 4px 6px rgba(20%,20%,40%,0.4), 6px 6px 12px rgba(20%,20%,40%,0.4);-moz-box-shadow: 4px 4px 12px 4px rgba(20%,20%,40%,0.5);}
 .gray img{width:100%;max-height:350px;}.word{color:#393939;margin:5px 5px 0 5px;font-weight:600;}
+.ribbon {
+  width: 260px;
+  padding:15px 0;
+  background-color: #3a3;
+  text-align:center;
+  color:#fff;
+  position:absolute;
+  transform:rotate(-45deg);
+  top:15px;
+  right:15px;
+}
+.box {
+  position:absolute;
+  width: 200px;
+  height: 200px;
+  overflow:hidden;
+  top:-10px;
+  left:-10px;
+}
+.box:after,.box:before {
+  position: absolute;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+  z-index:-1;
+}
+.box:after {
+  top:0px;
+  left:63%;
+  transform:translatex(-63%)
+}
+.box:before {
+  top:63%;
+  left:0;
+  transform:translatey(-63%)
+}
 </style>
 <body>
 <div class="swiper-container">
 	<div class="swiper-wrapper">
 		<div class="swiper-slide">
+			<div class="box">
+    <div class="ribbon">2015.10.04<div>
+  </div>
 			<div class="date">2015.10.04</div>
 			<div class="gray">
 				<img src="./map.png" class="">
@@ -42,6 +80,7 @@ body {font-family: "PingFang TC","微軟正黑體",sans-serif;color: #d8d8d8;}
 		<div class="swiper-slide"><img src="./shouye_nvsheng_packeage_six.png" class="main-img"></div>
 	</div>
 </div>
+<!--<div class="swiper-pagination" id="pagination"></div>-->
  <audio src="./normal.mp3" autoplay="autoplay" loop="loop"></audio>
  <embed src="./normal.mp3" autostart="true" hidden="true" loop="1" volume="100"/>
 <script type="text/javascript" src="./swiper.min.js"></script>
